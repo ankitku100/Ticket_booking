@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Ordering</title>
+  <link rel="stylesheet" href="food.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <!-- Food Ordering Form -->
+  <div class="container">
+    <h1>Order Your Favorite Food</h1>
+    <form id="food-ordering-form" action="search_food.php" method="POST">
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter your location" required>
+      </div>
+      <div class="form-group">
+        <label for="restaurant">Restaurant Name (Optional):</label>
+        <input type="text" id="restaurant" name="restaurant" placeholder="Enter restaurant name">
+      </div>
+      <button type="submit" class="search-button">Search Food</button>
+    </form>
+  </div>
+</body>
+</html>
