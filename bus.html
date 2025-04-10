@@ -5,75 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Booking</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #f0f4f8;
+            color: #333;
         }
 
         h1 {
-            color: #003087;
+            color: #004aad;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-size: 2em;
         }
 
         h2 {
-            color: #444;
-            border-bottom: 2px solid #003087;
-            padding-bottom: 5px;
+            color: #004aad;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         .form-container {
-            background-color: white;
+            background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             margin-bottom: 30px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
-            color: #333;
+            font-size: 14px;
+            color: #555;
         }
 
         input[type="text"],
         input[type="date"] {
             width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
             box-sizing: border-box;
             font-size: 14px;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s ease;
         }
 
         input[type="text"]:focus,
         input[type="date"]:focus {
-            border-color: #003087;
+            border-color: #004aad;
             outline: none;
+            box-shadow: 0 0 4px rgba(0, 74, 173, 0.5);
         }
 
         button {
-            background-color: #003087;
-            color: white;
-            padding: 10px 20px;
+            background-color: #004aad;
+            color: #ffffff;
+            padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
         }
 
         button:hover {
-            background-color: #002260;
+            background-color: #00337e;
+            transform: scale(1.02);
+        }
+
+        button:active {
+            background-color: #002860;
+        }
+
+        .form-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-footer a {
+            color: #004aad;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -81,7 +110,7 @@
     <h1>Bus Booking</h1>
 
     <div class="form-container">
-        <h2>Book Bus Ticket</h2>
+        <h2>Book Your Ticket</h2>
         <form action="#" onsubmit="return validateBookingForm()">
             <div class="form-group">
                 <label for="from">From:</label>
@@ -95,32 +124,29 @@
 
             <div class="form-group">
                 <label for="date">Journey Date:</label>
-                <input type="date" id="date" name="date" min="2025-02-20" required>
+                <input type="date" id="date" name="date" required>
             </div>
 
             <button type="submit">Search Bus</button>
         </form>
+        <div class="form-footer">
+            <p>Need help? <a href="#">Contact support</a></p>
+        </div>
     </div>
-
 
     <script>
         // Basic form validation
         function validateBookingForm() {
-            const from = document.getElementById('from').value;
-            const to = document.getElementById('to').value;
-            const date = document.getElementById('date').value;
+            const from = document.getElementById('from').value.trim();
+            const to = document.getElementById('to').value.trim();
+            const date = document.getElementById('date').value.trim();
 
             if (from === to) {
                 alert('Departure and destination stations cannot be the same');
                 return false;
             }
-            return true;
-        }
-
-        function validatePNRForm() {
-            const pnr = document.getElementById('pnr').value;
-            if (pnr.length !== 10) {
-                alert('PNR number must be exactly 10 digits');
+            if (!date) {
+                alert('Please choose a valid journey date');
                 return false;
             }
             return true;
