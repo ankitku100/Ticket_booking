@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
   margin: 0;
   padding: 0;
   display: flex;
@@ -12,10 +12,10 @@ body {
 
 /* Login Container */
 .login-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 400px;
 }
@@ -25,8 +25,9 @@ body {
 }
 
 .login-box h2 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 25px;
+  color: #444;
+  font-size: 24px;
 }
 
 /* Login Form */
@@ -36,52 +37,68 @@ body {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: #555;
+  font-size: 14px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #74ebd5;
+  box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+  outline: none;
 }
 
 /* Login Button */
 .login-button {
-  background-color: #28a745;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
   color: #fff;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .login-button:hover {
-  background-color: #218838;
+  background: linear-gradient(135deg, #67d9c1, #8c9ce6);
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  transform: translateY(0);
 }
 
 /* Signup Link */
 .signup-link {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .signup-link p {
   color: #666;
+  font-size: 14px;
 }
 
 .signup-link a {
-  color: #28a745;
+  color: #74ebd5;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .signup-link a:hover {
